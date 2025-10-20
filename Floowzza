@@ -1,0 +1,13 @@
+P=game:GetService'Players';pl=P.LocalPlayer;pg=pl:WaitForChild'PlayerGui';T=game:GetService'TweenService'
+g=Instance.new'ScreenGui';g.Name='AWM';g.ResetOnSpawn=false;g.Parent=pg
+m=Instance.new'Frame';m.Parent=g;m.Name='M';m.Size=UDim2.new(.55,0,.68,0);m.Position=UDim2.new(.22,0,.16,0);m.BackgroundTransparency=.25;m.BackgroundColor3=Color3.fromRGB(24,24,26);m.BorderSizePixel=0
+l=Instance.new'Frame';l.Parent=m;l.Size=UDim2.new(.28,0,1,0);l.BackgroundTransparency=.6;l.BackgroundColor3=Color3.fromRGB(20,20,22)
+Instance.new'UIListLayout'(l)
+Instance.new'TextLabel'(l).Text='Auto Walk Mount';l[1].Size=UDim2.new(1,-20,0,36);l[1].Position=UDim2.new(0,10,0,8);l[1].BackgroundTransparency=1;l[1].TextColor3=Color3.fromRGB(240,240,240);l[1].Font=Enum.Font.GothamBold;l[1].TextSize=16
+for i,v in ipairs{'Main','Fitur','Tools','Teleport','Appearance'}do b=Instance.new'TextButton';b.Parent=l;b.Size=UDim2.new(1,-24,0,36);b.BackgroundTransparency=.8;b.BorderSizePixel=0;b.Text=v;b.Font=Enum.Font.Gotham;b.TextSize=14;b.TextColor3=Color3.fromRGB(230,230,230)end
+r=Instance.new'Frame';r.Parent=m;r.Size=UDim2.new(.72,0,1,0);r.Position=UDim2.new(.28,0,0,0);Instance.new'UIListLayout'(r).Padding=UDim.new(0,12)
+function a(t,d)f=Instance.new'Frame';f.Parent=r;f.Size=UDim2.new(1,-24,0,64);f.BackgroundTransparency=.8;Instance.new'TextLabel'(f).Text=t;f[1].Font=Enum.Font.GothamBold;f[1].TextSize=14;f[1].BackgroundTransparency=1;f[1].Position=UDim2.new(0,12,0,6);f[1].Size=UDim2.new(1,-24,0,22);s=Instance.new'TextLabel'(f);s.Text=d;s.Font=Enum.Font.Gotham;s.TextSize=12;s.BackgroundTransparency=1;s.Position=UDim2.new(0,12,0,30);s.Size=UDim2.new(.85,0,0,28)end
+a('Moonlight','Terapkan preset Moonlight')a('Storm','Terapkan preset Storm')a('Winter','Terapkan preset Winter')a('Sunrise','Terapkan preset Sunrise')a('Server Hop','Pindah ke server jika <10 pemain')a('Rejoin Server','Gabung ulang ke server sekarang')
+tb=Instance.new'TextButton';tb.Parent=g;tb.Size=UDim2.new(.08,0,.04,0);tb.Position=UDim2.new(.9,0,.12,0);tb.BackgroundTransparency=.6;tb.BorderSizePixel=0;tb.Text='—';tb.Font=Enum.Font.GothamBold;tb.TextSize=20;tb.TextColor3=Color3.fromRGB(240,240,240)
+tb.MouseButton1Click:Connect(function()if m.Visible then T:Create(m,TweenInfo.new(.18),{Size=UDim2.new(.2,0,.06,0)}):Play();wait(.2);m.Visible=false else m.Visible=true;T:Create(m,TweenInfo.new(.18),{Size=UDim2.new(.55,0,.68,0)}):Play()end end)
+print('AWM')
